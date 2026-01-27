@@ -26,6 +26,10 @@ public class EscolaModel {
 
     private String endereco;
 
+    private String numero;
+
+    private String complemento;
+
     private String bairro;
 
     @OneToMany(mappedBy = "escola", cascade = CascadeType.ALL)

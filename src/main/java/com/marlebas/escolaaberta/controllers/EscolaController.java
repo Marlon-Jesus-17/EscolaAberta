@@ -1,10 +1,9 @@
 package com.marlebas.escolaaberta.controllers;
 
+import com.marlebas.escolaaberta.dtos.EscolaFilterDTO;
 import com.marlebas.escolaaberta.dtos.EscolaResponseDTO;
 import com.marlebas.escolaaberta.services.EscolaService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,6 +20,11 @@ public class EscolaController {
     @GetMapping("/listar")
     public List<EscolaResponseDTO> listarTudo(){
         return escolaService.listarTudo();
+    }
+
+    @PostMapping("/buscar")
+    public List<EscolaResponseDTO> buscar(@RequestBody EscolaFilterDTO filtro){
+        return escolaService.buscarComFiltro(filtro);
     }
 
 }
