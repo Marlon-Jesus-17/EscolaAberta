@@ -6,29 +6,23 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "db_projetosocial")
+@Table(name = "tb_cursos")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProjetoSocialModel {
+public class CursoModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nome_projeto", nullable = false)
+    @Column(name = "nome_curso", nullable = false)
     private String nome;
 
-    private String descricao;
-
-    private String categoria;
-
-    private String publicoAlvo;
-
-    private String status;
+    private String area;
 
     @ManyToOne
-    @JoinColumn(name = "escola_id")
+    @JoinColumn(name = "escola_inep", referencedColumnName = "inep")
     private EscolaModel escola;
 
 }

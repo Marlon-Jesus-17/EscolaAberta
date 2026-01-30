@@ -8,6 +8,7 @@ import com.marlebas.escolaaberta.repositories.EscolaRepository;
 import com.marlebas.escolaaberta.repositories.specs.EscolaSpecs;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -22,8 +23,16 @@ public class EscolaService {
         this.escolaMapper = escolaMapper;
     }
 
-    public List<EscolaResponseDTO> listarTudo(){
-        return escolaRepository.findAll().stream()
+    @Transactional(readOnly = true)
+    public List<EscolaResponseDTO> listarTudo() {
+        List<EscolaModel> escolas = escolaRepository.findAll();
+
+        // Verificação no console
+        for (EscolaModel escola : escolas) {
+            System.out.println("Escola: " + escola.getNome() + " | Qtd Cursos: " + escola.getCursos().size());
+        }
+
+        return escolas.stream()
                 .map(escolaMapper::map)
                 .toList();
     }

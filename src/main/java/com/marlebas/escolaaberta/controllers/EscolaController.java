@@ -18,7 +18,7 @@ public class EscolaController {
     }
 
     @GetMapping("/listar")
-    public List<EscolaResponseDTO> listarTudo(){
+    public List<EscolaResponseDTO> listarEscolas(){
         return escolaService.listarTudo();
     }
 

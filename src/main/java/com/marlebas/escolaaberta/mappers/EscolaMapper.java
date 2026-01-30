@@ -4,7 +4,7 @@ import com.marlebas.escolaaberta.dtos.EscolaResponseDTO;
 import com.marlebas.escolaaberta.models.EscolaModel;
 import org.mapstruct.Mapper;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = {CursoMapper.class})
 public interface EscolaMapper {
 
     EscolaResponseDTO map(EscolaModel escolaModel);

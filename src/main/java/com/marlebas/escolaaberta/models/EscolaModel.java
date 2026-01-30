@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -32,6 +33,8 @@ public class EscolaModel {
 
     private String bairro;
 
-    @OneToMany(mappedBy = "escola", cascade = CascadeType.ALL)
-    private List<ProjetoSocialModel> projetos;
+    private String telefone;
+
+    @OneToMany(mappedBy = "escola", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<CursoModel> cursos = new ArrayList<>();
 }
