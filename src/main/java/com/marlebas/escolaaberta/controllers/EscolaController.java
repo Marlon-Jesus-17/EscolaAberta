@@ -1,5 +1,6 @@
 package com.marlebas.escolaaberta.controllers;
 
+import com.marlebas.escolaaberta.dtos.CursoFilterDTO;
 import com.marlebas.escolaaberta.dtos.EscolaFilterDTO;
 import com.marlebas.escolaaberta.dtos.EscolaResponseDTO;
 import com.marlebas.escolaaberta.services.EscolaService;
@@ -23,7 +24,7 @@ public class EscolaController {
     }
 
     @PostMapping("/buscar")
-    public List<EscolaResponseDTO> buscar(@RequestBody EscolaFilterDTO filtro){
+    public List<?> buscar(@RequestBody EscolaFilterDTO filtro){
         return escolaService.buscarComFiltro(filtro);
     }
 

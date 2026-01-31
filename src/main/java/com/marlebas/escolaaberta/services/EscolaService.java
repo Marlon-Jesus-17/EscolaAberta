@@ -27,18 +27,15 @@ public class EscolaService {
     public List<EscolaResponseDTO> listarTudo() {
         List<EscolaModel> escolas = escolaRepository.findAll();
 
-        // Verificação no console
-        for (EscolaModel escola : escolas) {
-            System.out.println("Escola: " + escola.getNome() + " | Qtd Cursos: " + escola.getCursos().size());
-        }
-
         return escolas.stream()
                 .map(escolaMapper::map)
                 .toList();
     }
 
-    public List<EscolaResponseDTO> buscarComFiltro(EscolaFilterDTO filtro){
-        Specification<EscolaModel> espc = EscolaSpecs.contemNome(filtro.nome());
+    public List<?> buscarComFiltro(EscolaFilterDTO filtro){
+        Specification<EscolaModel> espc = EscolaSpecs.contemCurso();
+                espc = espc.and(EscolaSpecs.contemNome(filtro.nome()));
+                espc = espc.and(EscolaSpecs.nomeCurso(filtro.nome()));
                 espc = espc.and(EscolaSpecs.bairroIgual(filtro.bairro()));
 
         return escolaRepository.findAll(espc).stream()
