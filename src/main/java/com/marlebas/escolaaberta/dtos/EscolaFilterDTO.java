@@ -1,4 +1,4 @@
 package com.marlebas.escolaaberta.dtos;
 
-public record EscolaFilterDTO(String nome, String bairro, String modalidade) {
+public record EscolaFilterDTO(String nomeEscola, String bairro, String modalidade) {
 }
