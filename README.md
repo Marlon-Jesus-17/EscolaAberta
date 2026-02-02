@@ -30,8 +30,8 @@ src/main/java/com/marlebas/escolaaberta/
 ├── dtos/           # Objetos de transferência (Records)
 ├── models/         # Entidades do Banco de Dados
 ├── repositories/   # Interfaces JpaRepository
+  └── specs/          # Lógica das Specifications (Queries Dinâmicas)
 ├── services/       # Regras de negócio e lógica de filtros
-└── specs/          # Lógica das Specifications (Queries Dinâmicas)
 
 ---
 
