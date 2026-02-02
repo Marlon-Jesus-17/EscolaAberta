@@ -1,11 +1,11 @@
-package com.marlebas.escolaaberta.services;
+package com.marlebas.escolaaberta.services.escola;
 
-import com.marlebas.escolaaberta.dtos.EscolaFilterDTO;
-import com.marlebas.escolaaberta.dtos.EscolaResponseDTO;
-import com.marlebas.escolaaberta.mappers.EscolaMapper;
-import com.marlebas.escolaaberta.models.EscolaModel;
-import com.marlebas.escolaaberta.repositories.EscolaRepository;
-import com.marlebas.escolaaberta.repositories.specs.EscolaSpecs;
+import com.marlebas.escolaaberta.dtos.escola.EscolaFilterDTO;
+import com.marlebas.escolaaberta.dtos.escola.EscolaResponseDTO;
+import com.marlebas.escolaaberta.mappers.escola.EscolaMapper;
+import com.marlebas.escolaaberta.models.escola.EscolaModel;
+import com.marlebas.escolaaberta.repositories.escola.EscolaRepository;
+import com.marlebas.escolaaberta.repositories.specs.EscolaSpec;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,10 +33,10 @@ public class EscolaService {
     }
 
     public List<EscolaResponseDTO> buscarComFiltro(EscolaFilterDTO filtro){
-        Specification<EscolaModel> espc = EscolaSpecs.contemCurso();
-                espc = espc.and(EscolaSpecs.contemNome(filtro.nomeEscola()));
-                espc = espc.and(EscolaSpecs.nomeCurso(filtro.nomeCurso()));
-                espc = espc.and(EscolaSpecs.bairroIgual(filtro.bairro()));
+        Specification<EscolaModel> espc = EscolaSpec.contemCurso();
+                espc = espc.and(EscolaSpec.contemNome(filtro.nomeEscola()));
+                espc = espc.and(EscolaSpec.nomeCurso(filtro.nomeCurso()));
+                espc = espc.and(EscolaSpec.bairroIgual(filtro.bairro()));
 
         return escolaRepository.findAll(espc).stream()
                 .map(escolaMapper::map)

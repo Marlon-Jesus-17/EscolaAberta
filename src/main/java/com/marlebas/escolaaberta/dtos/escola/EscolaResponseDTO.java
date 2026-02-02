@@ -1,4 +1,6 @@
-package com.marlebas.escolaaberta.dtos;
+package com.marlebas.escolaaberta.dtos.escola;
+
+import com.marlebas.escolaaberta.dtos.curso.CursoResponseDTO;
 
 import java.util.List;
 

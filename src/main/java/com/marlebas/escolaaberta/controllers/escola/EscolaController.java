@@ -1,9 +1,8 @@
-package com.marlebas.escolaaberta.controllers;
+package com.marlebas.escolaaberta.controllers.escola;
 
-import com.marlebas.escolaaberta.dtos.CursoFilterDTO;
-import com.marlebas.escolaaberta.dtos.EscolaFilterDTO;
-import com.marlebas.escolaaberta.dtos.EscolaResponseDTO;
-import com.marlebas.escolaaberta.services.EscolaService;
+import com.marlebas.escolaaberta.dtos.escola.EscolaFilterDTO;
+import com.marlebas.escolaaberta.dtos.escola.EscolaResponseDTO;
+import com.marlebas.escolaaberta.services.escola.EscolaService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;

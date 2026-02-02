@@ -1,9 +1,9 @@
 package com.marlebas.escolaaberta.repositories.specs;
 
-import com.marlebas.escolaaberta.models.EscolaModel;
+import com.marlebas.escolaaberta.models.escola.EscolaModel;
 import org.springframework.data.jpa.domain.Specification;
 
-public class EscolaSpecs {
+public class EscolaSpec {
 
     public static Specification<EscolaModel> contemNome(String nome){
         return (root, query, builder)

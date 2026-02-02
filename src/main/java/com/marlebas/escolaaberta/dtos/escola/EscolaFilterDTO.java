@@ -1,4 +1,4 @@
-package com.marlebas.escolaaberta.dtos;
+package com.marlebas.escolaaberta.dtos.escola;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 

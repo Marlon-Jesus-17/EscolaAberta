@@ -1,7 +1,7 @@
-package com.marlebas.escolaaberta.mappers;
+package com.marlebas.escolaaberta.mappers.curso;
 
-import com.marlebas.escolaaberta.dtos.CursoResponseDTO;
-import com.marlebas.escolaaberta.models.CursoModel;
+import com.marlebas.escolaaberta.dtos.curso.CursoResponseDTO;
+import com.marlebas.escolaaberta.models.curso.CursoModel;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

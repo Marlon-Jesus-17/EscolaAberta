@@ -1,5 +1,6 @@
-package com.marlebas.escolaaberta.models;
+package com.marlebas.escolaaberta.models.escola;
 
+import com.marlebas.escolaaberta.models.curso.CursoModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
