@@ -32,10 +32,10 @@ public class EscolaService {
                 .toList();
     }
 
-    public List<?> buscarComFiltro(EscolaFilterDTO filtro){
+    public List<EscolaResponseDTO> buscarComFiltro(EscolaFilterDTO filtro){
         Specification<EscolaModel> espc = EscolaSpecs.contemCurso();
                 espc = espc.and(EscolaSpecs.contemNome(filtro.nomeEscola()));
-                espc = espc.and(EscolaSpecs.nomeCurso(filtro.nomeEscola()));
+                espc = espc.and(EscolaSpecs.nomeCurso(filtro.nomeCurso()));
                 espc = espc.and(EscolaSpecs.bairroIgual(filtro.bairro()));
 
         return escolaRepository.findAll(espc).stream()
