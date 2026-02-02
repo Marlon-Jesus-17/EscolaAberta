@@ -8,7 +8,6 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring", uses = {CursoMapper.class})
 public interface EscolaMapper {
 
-    @Mapping(source = "nome", target = "nome")
     EscolaResponseDTO map(EscolaModel escolaModel);
 
     EscolaModel map(EscolaResponseDTO escolaResponseDTO);

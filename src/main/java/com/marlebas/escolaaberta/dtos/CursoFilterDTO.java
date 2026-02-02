@@ -1,4 +1,8 @@
 package com.marlebas.escolaaberta.dtos;
 
-public record CursoFilterDTO(String nomeCurso) {
+import io.swagger.v3.oas.annotations.media.Schema;
+
+public record CursoFilterDTO(
+        @Schema(description = "Nome completo ou parcial do curso", example = "Informatica")
+        String nomeCurso) {
 }

@@ -10,9 +10,11 @@ public interface CursoMapper {
 
     @Mapping(source = "escola.nome", target = "escola")
     @Mapping(source = "escola.inep", target = "inepEscola")
+    @Mapping(source = "nome", target = "nomeCurso")
     CursoResponseDTO map(CursoModel cursoModel);
 
     @Mapping(source = "inepEscola", target = "escola.inep")
     @Mapping(source = "escola", target = "escola.nome")
+    @Mapping(source = "nomeCurso", target = "nome")
     CursoModel map(CursoResponseDTO cursoResponseDTO);
 }

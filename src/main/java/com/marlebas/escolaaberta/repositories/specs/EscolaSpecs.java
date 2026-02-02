@@ -17,7 +17,8 @@ public class EscolaSpecs {
 
     public static Specification<EscolaModel> nomeCurso(String nomeCurso){
         return (root, query, builder)
-                -> nomeCurso == null ? null : builder.like(root.join("cursos").get("nome"), "%" + nomeCurso+ "%");
+                ->{ query.distinct(true);
+            return nomeCurso == null ? null : builder.like(root.join("cursos").get("nome"), "%" + nomeCurso+ "%");};
     }
 
     public static Specification<EscolaModel> contemCurso(){
